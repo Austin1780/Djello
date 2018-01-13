@@ -3,3 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.site-icon {
+  width: 100px;
+  height: 70px;
+}
