@@ -1,5 +1,4 @@
 import React from "react";
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import MainNavBar from "./MainNavBar";
@@ -13,7 +12,11 @@ const App = () => (
       <MainNavBar />
       <Switch>
         <Route exact path="/" component={BoardContainer} />
-        <Route render={() => <img src={img404} alt="404 page not found" />} />
+        <Route
+          render={() => (
+            <img src={img404} alt="404 page not found" className="center" />
+          )}
+        />
       </Switch>
     </ScrollToTop>
   </Router>

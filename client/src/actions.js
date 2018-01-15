@@ -1,7 +1,5 @@
-//syntax issue somewhere over here
-
 export const GET_REQUEST = "GET_REQUEST";
-export const GET_SUCCESS = "GET_SUCCESS";
+export const GET_BOARDS_SUCCESS = "GET_SUCCESS";
 export const GET_FAILURE = "GET_FAILURE";
 
 export function getRequest() {
@@ -10,16 +8,13 @@ export function getRequest() {
   };
 }
 
-// Sends successful data response to reducer
-export function getSuccess(data) {
-  //data will be {films: }
+export function getBoardsSuccess(data) {
   return {
-    type: GET_SUCCESS,
+    type: GET_BOARDS_SUCCESS,
     data
   };
 }
 
-// Sends the response error to the reducer
 export function getFailure(error) {
   return {
     type: GET_FAILURE,
@@ -28,30 +23,27 @@ export function getFailure(error) {
 }
 
 export function getBoards(user) {
-  return async dispatch => {
+  return dispatch => {
     try {
       dispatch(getRequest());
 
-      let dataObj = {};
-      //
-      // await fetch(`https://swapi.co/api/people/?page=${page}`)
-      //   .then(response => {
-      //     if (!response.ok) {
-      //       throw new Error(`${response.status} ${response.statusText}`);
-      //     }
-      //     return response.json();
-      //   })
-      //   .then(json => {
-      //     dataObj["people"] = json.results;
-      //     return json.results;
-      //   })
-      //   .catch(error => {
-      //     dispatch(getFailure(error));
-      //   });
-
-      dispatch(getSuccess(dataObj));
+      fetch("./api/boards")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then(json => {
+          dispatch(getBoardsSuccess(json.results));
+        })
+        .catch(error => {
+          dispatch(getFailure(error));
+        });
     } catch (e) {
       console.log(e);
     }
   };
 }
+
+export function createBoard(user) {}

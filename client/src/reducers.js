@@ -2,13 +2,15 @@ import * as Actions from "./actions";
 
 const initialState = {
   boards: [],
+  lists: [],
+  cards: [],
   isFetching: false,
   error: null
 };
 
 export function djello(state = initialState, action) {
   switch (action.type) {
-    case Actions.GET_SUCCESS:
+    case Actions.GET_BOARDS_SUCCESS:
       return {
         ...state,
         boards: action.data.boards,

@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
-import { Jumbotron, Table } from "reactstrap";
+import { Table } from "reactstrap";
+import NewBoard from "./NewBoard";
 
 class Board extends PureComponent {
   constructor(props) {
@@ -27,11 +28,7 @@ class Board extends PureComponent {
             </div>
           </div>
         ) : (
-          <Jumbotron className="welcome-panel welcome1">
-            <h1 className="display-5">Welcome to Djello!</h1>
-            <hr className="my-2" />
-            <p>Create a new board to begin.</p>
-          </Jumbotron>
+          <NewBoard />
         )}
       </div>
     );

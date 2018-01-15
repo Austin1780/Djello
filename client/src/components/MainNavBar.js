@@ -31,17 +31,24 @@ class MainNavBar extends PureComponent {
   render() {
     return (
       <div>
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">
+        <Navbar color="dark" className="navbar-dark">
+          <NavbarBrand href="/">
             <h1>
-              <img src={logo} alt="logo" className="site-icon" />
-              Djello!
+              <img src={logo} alt="logo" className="site-icon" /> Djello!
             </h1>
           </NavbarBrand>
-          <img src={defaultUser} alt="default user" className="profile-icon" />
-          <h3>Welcome, (Username)!</h3>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
+          <div>
+            <h3>
+              <img
+                src={defaultUser}
+                alt="default user"
+                className="profile-icon"
+              />{" "}
+              Welcome, (Username)!
+            </h3>
+          </div>
+          <NavbarToggler onClick={this.toggleNavbar} />
+          <Collapse isOpen={!this.state.collapsed} navbar className="links">
             <Nav navbar>
               <NavItem>
                 <NavLink href="">Profile</NavLink>

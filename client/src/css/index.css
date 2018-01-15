@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Kavivanar");
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Kavivanar", cursive;
   background-color: #add8e6;
 }
 
@@ -17,9 +19,43 @@ body {
 
 .welcome1 {
   background-color: #ff9f50;
-  margin: 20px;
   border-radius: 100%;
   text-align: center;
-  width: 300px;
+  width: 350px;
   border: black solid 1px;
+  margin: auto;
+  margin-top: 20px;
+  display: block;
+}
+
+.hr1 {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  display: block;
+}
+
+.extraPadding {
+  padding: 15px;
+}
+
+.navbar {
+  background-color: #d3d3d3;
+  border-bottom: 1px solid black;
+  color: white;
+  font-family: "Kavivanar", cursive;
+}
+
+.fa-arrow-down {
+  font-size: 60px;
 }
