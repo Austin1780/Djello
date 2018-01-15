@@ -6,63 +6,49 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
 } from "reactstrap";
 
-import logo from "../djelloLogo.png";
-import defaultUser from "../defaultUser.png";
+import logo from "../images/djelloLogo.png";
+import defaultUser from "../images/defaultUser.png";
 
 class MainNavBar extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      isOpen: true
+      collapsed: true
     };
   }
-  toggle() {
+
+  toggleNavbar() {
     this.setState({
-      isOpen: !this.state.isOpen
+      collapsed: !this.state.collapsed
     });
   }
 
   render() {
     return (
       <div>
-        <Navbar expand="md">
-          <NavbarBrand href="/">
+        <Navbar color="faded" light>
+          <NavbarBrand href="/" className="mr-auto">
             <h1>
               <img src={logo} alt="logo" className="site-icon" />
               Djello!
             </h1>
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+          <img src={defaultUser} alt="default user" className="profile-icon" />
+          <h3>Welcome, (Username)!</h3>
+          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <Collapse isOpen={!this.state.collapsed} navbar>
+            <Nav navbar>
               <NavItem>
-                <img
-                  src={defaultUser}
-                  alt="default user"
-                  className="profile-icon"
-                />
-                <h3>Welcome, (Username)!</h3>
+                <NavLink href="">Profile</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>Profile</DropdownItem>
-                  <DropdownItem>Boards</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Logout</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="">Boards</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

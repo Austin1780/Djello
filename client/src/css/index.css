@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #add8e6;
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.site-icon {
+  width: 100px;
+  height: 70px;
+}
+
+.welcome1 {
+  background-color: #ff9f50;
+  margin: 20px;
+  border-radius: 100%;
+  text-align: center;
+  width: 300px;
+  border: black solid 1px;
+}
