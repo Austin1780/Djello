@@ -51,10 +51,24 @@ class MainNavBar extends PureComponent {
           <Collapse isOpen={!this.state.collapsed} navbar className="links">
             <Nav navbar>
               <NavItem>
-                <NavLink href="">Profile</NavLink>
+                <NavLink href="" className="links">
+                  Profile <i className="fa fa-id-card" />
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">Boards</NavLink>
+                <NavLink href="" className="links">
+                  Boards <i className="fa fa-columns" />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="" className="links">
+                  Settings <i className="fa fa-cog" />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="" className="links">
+                  Logout <i className="fa fa-hand-peace" />
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

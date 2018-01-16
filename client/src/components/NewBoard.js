@@ -19,7 +19,6 @@ class NewBoard extends PureComponent {
     };
 
     this.toggle = this.toggle.bind(this);
-    this.props.createBoard = this.props.createBoard.bind(this);
   }
 
   toggle() {
@@ -35,7 +34,7 @@ class NewBoard extends PureComponent {
           <h1 className="display-5">Welcome to Djello!</h1>
           <hr className="hr1" />
           <p>Create a new board to begin.</p>
-          <i class="fa fa-arrow-down" />
+          <i class="fa fa-long-arrow-alt-down" />
           <br />
           <Button color="primary" size="lg" onClick={this.toggle}>
             New Board

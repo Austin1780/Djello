@@ -22,10 +22,11 @@ body {
   border-radius: 100%;
   text-align: center;
   width: 350px;
-  border: black solid 1px;
+  border: black solid 2px;
   margin: auto;
   margin-top: 20px;
   display: block;
+  box-shadow: 10px 10px 20px;
 }
 
 .hr1 {
@@ -56,6 +57,36 @@ body {
   font-family: "Kavivanar", cursive;
 }
 
-.fa-arrow-down {
+.fa {
+  font-size: 25px;
+  color: white;
+}
+
+.links {
+  font-size: 25px;
+  text-align: right;
+}
+
+.links:hover {
+  color: white !important;
+}
+
+.fa-long-arrow-alt-down {
   font-size: 60px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.btn,
+.btn:hover {
+  border: black solid 2px;
+  border-radius: 15px;
+}
+
+p {
+  font-size: 20px;
+}
+
+Label {
+  font-size: 20px;
 }
