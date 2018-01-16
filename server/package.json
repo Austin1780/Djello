@@ -17,6 +17,7 @@
     "express-flash-messages": "^0.1.1",
     "express-handlebars": "^3.0.0",
     "express-method-override-get-post-support": "^1.0.1",
+    "isomorphic-fetch": "^2.2.1",
     "load-helpers": "^1.0.1",
     "lodash": "^4.17.4",
     "method-override": "^2.3.10",
