@@ -13,15 +13,23 @@ import {
 
 class NewBoard extends PureComponent {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       modal: false
     };
 
     this.toggle = this.toggle.bind(this);
+    this.create = this.create.bind(this);
   }
 
   toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  create() {
+    this.props.createBoard(this.props.user);
     this.setState({
       modal: !this.state.modal
     });
@@ -55,7 +63,7 @@ class NewBoard extends PureComponent {
             </FormGroup>
           </Form>
           <ModalFooter>
-            <Button color="success" onClick={this.toggle}>
+            <Button color="success" onClick={this.create}>
               Create Board
             </Button>{" "}
             <Button color="secondary" onClick={this.toggle}>

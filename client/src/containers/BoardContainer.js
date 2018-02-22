@@ -3,37 +3,26 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import Board from "../components/Board";
-import { getBoards } from "../actions";
-
-class BoardContainer extends Component {
-  constructor(props) {
-    super();
-
-    this.state = {
-      boards: []
-    };
-  }
-
-  render() {
-    return <Board boards={this.props.boards} />;
-  }
-}
+import { getBoards, createBoard } from "../actions";
 
 const mapStateToProps = state => {
   return {
+    user: state.user,
     boards: state.boards
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  // Create an object with the action creators
-  // (or, import them as a named object)
-  const actions = {
-    getBoards
+  return {
+    getBoards: user => {
+      dispatch(getBoards(user));
+    },
+    createBoard: user => {
+      dispatch(createBoard(user.id));
+    }
   };
-
-  // Returns exactly the same code as above
-  return bindActionCreators(actions, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardContainer);
+const BoardContainer = connect(mapStateToProps, mapDispatchToProps)(Board);
+
+export default BoardContainer;

@@ -10,6 +10,11 @@ const initialState = {
 
 export function djello(state = initialState, action) {
   switch (action.type) {
+    case Actions.ADD_BOARD:
+      return {
+        ...state,
+        boards: [action.data, ...state.boards]
+      };
     case Actions.GET_BOARDS_SUCCESS:
       return {
         ...state,
